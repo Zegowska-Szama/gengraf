@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grafik Pracowników</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Generowanie Grafiku Pracowników</h1>
+    
+    <div id="employee-selection">
+        <h2>Dodaj pracownika</h2>
+        <input type="text" id="employeeName" placeholder="Imię i nazwisko" required>
+        <input type="text" id="availableDays" placeholder="Dni (np. poniedziałek, wtorek)" required>
+        <select id="roles" required>
+            <option value="" disabled selected>Wybierz rolę</option>
+            <option value="kasa">Kasa</option>
+            <option value="bułki">Bułki</option>
+            <option value="hotdogi">Hotdogi</option>
+            <option value="sprzątanie">Sprzątanie</option>
+        </select>
+        <button id="addEmployeeButton">Dodaj Pracownika</button>
+    </div>
+
+    <button id="generateButton">Generuj Grafik</button>
+    <button id="resetButton">Resetuj Grafik</button>
+
+    <h2>Grafik:</h2>
+    <div id="scheduleOutput"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
