@@ -29,21 +29,20 @@ document.getElementById('generateButton').addEventListener('click', function() {
     });
 
     // Generowanie tabeli
-    let output = '<table><tr><th>Dzień</th><th>Hotdogi</th><th>Bułki</th><th>Kasa</th><th>Sprzątanie</th></tr>';
+    let output = '<table style="border-collapse: collapse; width: 100%; border: 1px solid black;"><tr><th style="border: 1px solid black;">Dzień</th><th style="border: 1px solid black;">Hotdogi</th><th style="border: 1px solid black;">Bułki</th><th style="border: 1px solid black;">Kasa</th><th style="border: 1px solid black;">Sprzątanie</th></tr>';
 
-    const daysOfWeek = ['poniedziałek', 'wtorek', 'środa', 'czwartek', 'piątek'];
-    daysOfWeek.forEach(day => {
-        output += `<tr><td>${day.charAt(0).toUpperCase() + day.slice(1)}</td>`;
-        output += `<td>${schedule[day]['hotdog'] ? schedule[day]['hotdog'] : '-'}</td>`;
-        output += `<td>${schedule[day]['bulki'] ? schedule[day]['bulki'] : '-'}</td>`;
-        output += `<td>${schedule[day]['kasa'] ? schedule[day]['kasa'] : '-'}</td>`;
-        output += `<td>${schedule[day]['sprzatanie'] ? schedule[day]['sprzatanie'] : '-'}</td>`;
-        output += '</tr>';
-    });
-    output += '</table>';
-
-    document.getElementById('scheduleOutput').innerHTML = output;
+const daysOfWeek = ['poniedziałek', 'wtorek', 'środa', 'czwartek', 'piątek'];
+daysOfWeek.forEach(day => {
+    output += `<tr><td style="border: 1px solid black;">${day.charAt(0).toUpperCase() + day.slice(1)}</td>`;
+    output += `<td style="border: 1px solid black;">${schedule[day]['hotdog'] ? schedule[day]['hotdog'] : '-'}</td>`;
+    output += `<td style="border: 1px solid black;">${schedule[day]['bulki'] ? schedule[day]['bulki'] : '-'}</td>`;
+    output += `<td style="border: 1px solid black;">${schedule[day]['kasa'] ? schedule[day]['kasa'] : '-'}</td>`;
+    output += `<td style="border: 1px solid black;">${schedule[day]['sprzatanie'] ? schedule[day]['sprzatanie'] : '-'}</td>`;
+    output += '</tr>';
 });
+output += '</table>';
+
+document.getElementById('scheduleOutput').innerHTML = output;
 
 // Funkcja resetująca grafik
 document.getElementById('resetButton').addEventListener('click', function() {
